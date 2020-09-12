@@ -12,7 +12,7 @@
 }
 
 
-*{ margin: 0; padding: 0; }
+*{ margin: 0; padding: 0; box-sizing: border-box; }
 html, body{ background-color: var(--color-body); }
 
 
@@ -63,10 +63,11 @@ html, body{ background-color: var(--color-body); }
 /* ================== BUTTONS ====================== */
 .btn{
     font-size: 17px; font-family: var(--charu); font-weight: bold;
-    padding: 15px 40px; 
+    padding: 15px 40px; text-decoration: none;
     border-radius: 30px; border: none; outline: none;
     cursor: pointer;
 }
+.btn-small{ padding: 8px 24px; font-size: 14px; }
 .btn__common-white{ background: #ffff; color: #444; }
 .btn__common-green{ 
     background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%); 
