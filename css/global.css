@@ -69,9 +69,17 @@ html, body{ background-color: var(--color-body); }
 }
 .btn-small{ padding: 8px 24px; font-size: 14px; }
 .btn__common-white{ background: #ffff; color: #444; }
-.btn__common-green{ 
-    background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%); 
-    color: #fff
+.btn__common-green, .btn__common-green-outline:hover{ 
+    background: linear-gradient(120deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%); 
+    color: #fff; transition: .4s;
+}
+.btn__common-green-outline, .btn__common-green:hover{ 
+    border: 1px solid var(--color-primary); transition: .3s;
+    background: transparent; color: var(--color-primary);
+}
+
+@media (max-width: 768px){ 
+    .btn-small{ padding: 4px 12px; font-size: 12px; }
 }
 
 /* ===================== NAVIGATION ================= */

@@ -6,7 +6,7 @@
     display: flex; flex-wrap: wrap;
     align-items: flex-start; justify-content: space-between;
 }
-.userprofile__user-info{ flex-basis: 25%; min-height: 100vh; position: sticky; top: 20px; padding: 0 20px;}
+.userprofile__user-info{ flex-basis: 25%; height: 100vh; position: sticky; top: 20px; padding: 0 20px;}
 .userprofile__user-content{ flex-basis: 75%; min-height: 100vh; padding: 0 20px; }
 .line{ width: 100%; height: 2px; background-color: #f7f7f7; }
 
@@ -20,9 +20,10 @@
 /* user option box */
 .user-info-option-box, .user-info-image-box{ width: 100%; margin-bottom: 10px; padding: 0 25px; }
 .user-info-option-box{ padding-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+.user-info-option-box div{ cursor: pointer; }
 
 /* user image box */
-.user-info-image-box{ text-align: center; }
+.user-info-image-box{ width: 100%; text-align: center; }
 .user-info-image-box img{ width: 100px; height: 100px; border-radius: 50%;}
 .user-info-name h2{
     font-family: sans-serif;
@@ -37,7 +38,7 @@
     font-family: var(--charu);
     color: var(--color-primary);
     font-size: 25px; line-height: 25px;
- }
+}
 
 /* user current task progress */
 .user-current-task-progress{ 
@@ -68,7 +69,11 @@ font-family: var(--charu); font-size: 15px; color: #444;
 
 
 /* ===================== CONTET SECTION ===================== */
-.userprofile__user-content .heading{ margin-bottom: 20px; }
+.userprofile__user-content .heading{
+    width: 90%; margin-bottom: 20px;
+    display: flex; 
+    justify-content: space-between; align-items: center;
+}
 .content-heading{
     font-size: 35px; letter-spacing: 2px; line-height: 31px;
     font-family: var(--anton); color: #444; margin-top: 20px;
@@ -86,25 +91,19 @@ font-family: var(--charu); font-size: 15px; color: #444;
 }
 
 /* content video */
+.content .content-video, .content .content-video .video,
+.content-video .content-back{
+    width: 100%; height: 35vh;
+}
 .content .content-video{
-    height: 35vh; background-color: #fff;
+    background-color: #fff;
     border-radius: 5px; 
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    position: relative;
 }
-.content .content-video .video{
+.content .content-video .video{ display: flex; justify-content: center; align-items: center; }
+.content .content-video .video video{
     width: 100%; max-height: 35vh; object-fit: contain;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
     outline: none; border: none;
-}
-.content-video .content-name{
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    font-family: var(--charu);
 }
 
 /* content info */
@@ -114,4 +113,35 @@ font-family: var(--charu); font-size: 15px; color: #444;
     color: #444; font-size: 15px; padding: 5px;
 }
 .content .content-info div{ display: flex; align-items: center; }
-.content .content-info a{ color: #444; text-decoration: none; margin-right: 15px; }
+.content .content-info a{ color: #444; text-decoration: none; margin-right: 15px; cursor: pointer;}
+.content .content-info .edit{ cursor: pointer;}
+
+
+@media (max-width: 768px){
+    .userprofile{ margin: 0; padding: 0;}
+    .userprofile__user-info{ flex-basis: 100%; height: max-content; position: static; padding: 0;}
+    .userprofile__user-content{ flex-basis: 100%; height: fit-content; padding: 0 20px; margin-top: 25px;}
+    .user-info{ width: 100%; height: fit-content; border-radius: 0; box-shadow: none; background-color: #f7f7f7;}
+    .line{ background: #fff; height: 1.5px;}
+    
+    .user-info-option-box, .user-info-image-box{ margin-bottom: 10px; padding: 0; }
+    .user-info-option-box{ padding: 25px 20px;  }
+    .user-info-option-box .extra{ display: none; }
+
+    .user-info-image-box{ width: 100%; text-align: center; }
+    .user-info-image-box img{ width: 100px; height: 100px; border-radius: 50%;}
+
+    .user-current-task-progress{  padding: 10px 20px 20px 20px; }
+    .user-points{ padding: 10px 20px;}
+
+    .user-badges{ padding: 10px 20px 20px 20px;}
+    .user-badges .badges img{ width: 40px; margin-right: 10px; }
+    .userprofile .back-to-home{ display: none;}
+
+
+    .userprofile__user-content .heading{ width: 100%; margin-bottom: 10px; }
+    .content-heading{ font-size: 20px; line-height: 20px; margin-top: 10px; }
+    .content-heading-des{font-size: 12px; }
+    .contents .content{ width: 100%; min-height: 20vh; padding: 0; margin-bottom: 25px;}
+    
+}
