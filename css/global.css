@@ -182,7 +182,7 @@ html, body{ background-color: var(--color-body); }
 .footer .text p span:hover{ color: var(--color-primary-light); }
 
 .footer__left{ width: 35%; min-height: 10vh; text-align: center; color: #fff;}
-.footer__right{ width: 30%; min-height: 10vh; color: #fff; padding: 10px;}
+.footer__right{ width: 50%; min-height: 10vh; color: #fff; padding: 10px;}
 .footer__right p{ text-align: right; }
 .footer__left h1{ 
     font-family: var(--anton);
